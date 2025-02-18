@@ -6,9 +6,9 @@ This repository contains a simple example of a dictionary attack coded in Java.
 Here are the files you can find in this repository:
 * `password.txt` is the password typed by user
 * `DictionaryAttack.java` is the source code for the attack
-* attack.py is the python script for the attack
+* `attack.py` is the python script for the attack
 * `english.0` is the dictionary used during the attack to recover passwords
-* crackedpassword is the password that was gussed right
+* `crackedpassword.txt` is the password that was gussed right
 
 ## Description of the `password.txt` file format
 
