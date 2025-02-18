@@ -4,21 +4,16 @@ This repository contains a simple example of a dictionary attack coded in Java.
 ## Description of Repository Content
 
 Here are the files you can find in this repository:
-* `password.txt` contains a list of passwords that we recover using the attack
+* `password.txt` is the password typed by user
 * `DictionaryAttack.java` is the source code for the attack
+* attack.py is the python script for the attack
 * `english.0` is the dictionary used during the attack to recover passwords
+* crackedpassword is the password that was gussed right
 
 ## Description of the `password.txt` file format
 
-The list of passwords that we recover using the attack is a text file in which
-each line contains a user account name followed by a password. There are two 
-possible line formats: the first one contains an unsalted password while the 
-second contains a salted password along with the salt. 
+The password user enters from the terminal 
 
-```
-username 0 unsaltedpassword
-username 1 salt saltedpassword
-```
 
 The passwords are hashed using SHA-1 (see attack source code for implementation
 in the Java Cryptography Extension). When a salt is used, it is simply concatenated together with the passwords as follows: `salt || password`.
@@ -27,7 +22,7 @@ in the Java Cryptography Extension). When a salt is used, it is simply concatena
 
 The attack simply reads the dictionary line by line and computes 6 different 
 possible hashed passwords for the word contained in each line. These 6 possible
-hashes are compared to each of the passwords contained in the `password.txt` 
+hashes are compared to the password contained in the `password.txt` 
 file for a match. If there is a match, we recovered a password. If not, we 
 simply keep reading the dictionary line by line. 
 
@@ -44,25 +39,11 @@ Note that the salts used in salted hashes are the ones includes in the
 
 ## How to run the attack
 
-To run the attack, simply compile and run the `DictionaryAttack.java` file.
+To run the attack, simply run attack.py python script
 All paths are hardcoded in the file so you will need to update them before 
 you compile the source code. 
 
-The output should be the following:
-```
-Let's get things started.
-joe's password is 'December'
-alice's password is 'tfosorciM'
-mary's password is 'Monday'
-john's password is 'brosba'
-bob's password is 'yllacitebahpla'
-guy's password is 'ntrstwrthnss'
-nick's password is 'uplifting'
-adam's password is 'vsblts'
-eve's password is 'wrrsm'
-andrew's password is 'kcitsdray'
-The program terminated.
-```
+
 
 ## Note on complexity
 
@@ -72,3 +53,8 @@ hashes before checking the password list for matches. Since our password list
 and dictionary are fairly small in this example, I did not implement this 
 feature.  
 
+## Task for Students
+
+Add more words to the dictonary by copy pasting passwords list from: https://web.archive.org/web/20120207113205/http://www.insidepro.com/eng/download.shtml
+into the english.0 file.
+Make your english.0 file as large as possible
