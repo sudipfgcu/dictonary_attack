@@ -1,5 +1,5 @@
 # Dictionary Attack
-This repository contains a simple example of a dictionary attack coded in Java.
+This repository contains a simple example of a dictionary attack coded in Python | Java.
 
 ## Description of Repository Content
 
